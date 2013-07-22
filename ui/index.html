@@ -8,29 +8,57 @@
 
 <div data-bind="foreach: rules">
   <div class="rule">
-    <input data-bind="value: rule" placeholder="E.g. [A-G]"></input>
-    <button data-bind="click: add_value_rule">Add value rule</button>
+
+    <div class="sub column-rule">
+
+      <span class="number" data-bind="text: $index() + 1"></span>
+
+      <input data-bind="value: rule" placeholder="E.g. [A-G]"></input>
+      <button class="add" data-bind="click: add_value_rule">Add value rule</button>
+
+      <span class="right">
+        <button class="copy" data-bind="click: $parent.copy_rule">Copy</button>
+        <button class="delete" data-bind="click: $parent.remove_rule">Delete</button>
+      </span>
+
+    </div>
+
     <div data-bind="foreach: value_rules">
-      <div class="rule sub">
-        <input data-bind="value: rule" placeholder="E.g. int(value) == 3"></input>
-        <button data-bind="click: function () {add_fact($root.ontology())}">Add fact</button>
+      <div class="rule">
+        <div class="sub value-rule">
+
+          <span  class="number" data-bind="text: $index() + 1"></span>
+
+          <input data-bind="value: rule" placeholder="E.g. int(value) == 3"></input>
+          <button class="add" data-bind="click: add_fact">Add fact</button>
+
+          <span class="right">
+            <button class="copy" data-bind="click: $parent.copy_value_rule">Copy</button>
+            <button class="delete" data-bind="click: $parent.remove_value_rule">Delete</button>
+          </span>
+
+        </div>
         <div data-bind="foreach: facts">
-          <div class="rule sub">
-            <select data-bind="options: $root.get_names(ontology.domain),
-                               optionsText: function (name) {
-                                   var item = ontology.domain[name];
-                                   return '[' + name + '] ' + item.name;
-                               }, value: domain"></select>
-            <select data-bind="options: $root.get_names(ontology.relation),
-                               optionsText: function (name) {
-                                   var item = ontology.relation[name];
-                                   return '[' + name + '] ' + item.name;
-                               }, value: relation"></select>
-            <select data-bind="options: $root.get_names(ontology.converse_domain),
-                               optionsText: function (name) {
-                                   var item = ontology.converse_domain[name];
-                                   return '[' + name + '] ' + item.name;
-                               }, value: converse_domain"></select>
+
+          <div class="sub rule">
+
+            <span class="number" data-bind="text: $index() + 1"></span>
+
+            <select data-bind="options: $root.get_names($root.ontology().domain),
+                               optionsText: $root.formatter('domain'),
+                               value: domain"></select>
+            <select data-bind="options: $root.get_names($root.ontology().relation),
+                               optionsText: $root.formatter('relation'),
+                               value: relation"></select>
+            <select data-bind="options: $root.get_names($root.ontology().converse_domain),
+                               optionsText: $root.formatter('converse_domain'),
+                               value: converse_domain"></select>
+
+            <span class="right">
+              <button class="copy" data-bind="click: $parent.copy_fact">Copy</button>
+              <button class="delete" data-bind="click: $parent.remove_fact">Delete</button>
+            </span>
+
           </div>
         </div>
       </div>
@@ -46,8 +74,8 @@
 
 
 <!-- Libs -->
-<script src="static/js/libs/knockout.js"></script>
 <script src="static/js/libs/jquery.js"></script>
+<script src="static/js/libs/knockout.js"></script>
 
 <!-- Code -->
 <script src="static/js/main.js"></script>

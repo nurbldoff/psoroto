@@ -1,34 +1,64 @@
 (function () {
 
-    var Fact = function (ontology) {
-        console.log("Fact", ontology);
-        this.ontology = ontology;
-        this.domain = ko.observable();
-        this.relation = ko.observable();
-        this.converse_domain = ko.observable();
+    var Fact = function (domain, relation, converse_domain) {
+        this.domain = ko.observable(domain || "None");
+        this.relation = ko.observable(relation || "None");
+        this.converse_domain = ko.observable(converse_domain || "None");
     };
 
 
-    var ValueRule = function () {
-        this.rule = ko.observable("");
-        this.facts = ko.observableArray([]);
-
-        this.add_fact = function (ontology) {
-            this.facts.push(new Fact(ontology));
-        };
-    };
-
-
-    var ColumnRule = function () {
+    var ValueRule = function (rule, facts) {
         var self = this;
 
-        self.rule = ko.observable("");
-        self.value_rules = ko.observableArray([]);
+        this.rule = ko.observable(rule || "");
 
-        this.add_value_rule = function () {
-            this.value_rules.push(new ValueRule());
+        var new_facts = [];
+        facts = facts || [];
+        facts.forEach(function (fact) {
+            new_facts.push(new Fact(fact.domain(), fact.relation(), fact.converse_domain()));
+        });
+        this.facts = ko.observableArray(new_facts);
+
+        this.add_fact = function () {
+            self.facts.push(new Fact());
         };
+
+        this.copy_fact = function (fact) {
+            self.facts.push(new Fact(fact.domain(), fact.relation(), fact.converse_domain()));
+        };
+
+        self.remove_fact = function (fact) {
+            self.facts.remove(fact);
+        };
+
     };
+
+
+    var ColumnRule = function (rule, value_rules) {
+        var self = this;
+
+        self.rule = ko.observable(rule || "");
+
+        var new_rules = [];
+        (value_rules || []).forEach(function (rule) {
+            new_rules.push(new ValueRule(rule.rule(), rule.facts()));
+        });
+        self.value_rules = ko.observableArray(new_rules);
+
+        self.add_value_rule = function () {
+            self.value_rules.push(new ValueRule());
+        };
+
+        this.copy_value_rule = function (rule) {
+            self.value_rules.push(new ValueRule(rule.rule(), rule.facts()));
+        };
+
+        self.remove_value_rule = function (rule, bla) {
+            self.value_rules.remove(rule);
+        };
+
+    };
+
 
     var MainViewModel = function () {
         var self = this;
@@ -37,6 +67,7 @@
 
         self.ontology = ko.observable({domain: {}, relation: {}, converse_domain: {}});
 
+        // The resulting JSON spec
         self.spec = ko.computed(function () {
             var spec = {};
             self.rules().forEach(function (rule) {
@@ -48,29 +79,41 @@
                     });
                     value_rules[value_rule.rule()] = facts;
                 });
-                console.log("rule", rule.rule());
                 spec[rule.rule()] = value_rules;
             });
             return JSON.stringify(spec, undefined, 4);
         });
 
         self.add_rule = function () {
-            this.rules.push(new ColumnRule());
+            self.rules.push(new ColumnRule());
+        };
+
+        self.copy_rule = function (rule) {
+            self.rules.push(new ColumnRule(rule.rule(), rule.value_rules()));
+        };
+
+        self.remove_rule = function (rule) {
+            self.rules.remove(rule);
         };
 
         $.get("/ontology",
               function (data) {
-                  console.log("ontology", data);
                   self.ontology(data);
               });
 
         self.get_names = function (obj) {
-            console.log("get_names", obj);
             var names = [];
             for (var key in obj) {
                 names.push(key); // + " - " + ont[key].name[0]);
             }
             return names.sort();
+        };
+
+        self.formatter = function (ont) {
+            return function (name) {
+                var item = self.ontology()[ont][name];
+                return '[' + name + '] ' + item.name;
+            };
         };
 
     };

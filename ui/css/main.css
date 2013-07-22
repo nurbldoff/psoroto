@@ -1,14 +1,62 @@
+body {
+    margin: 0 50px;
+}
 .rule {
-    margin: 3px;
-    background-color: rgba(0,100,0,0.1);
-    padding: 3px;
+    margin-left: 25px;
 }
 
 .sub {
-    margin-left: 20px;
+    padding: 3px;
+    position: relative;
+    border-bottom: 1px solid #bbb;
+}
+
+
+.sub.column-rule {
+    background-color: #D0E0F0;
+}
+
+.sub.value-rule {
+    background-color: #DFEFFF;
+}
+
+
+.number {
+    color: #909090;
 }
 
 .spec {
     background-color: #FFEECC;
     padding: 5px;
+}
+
+select {
+    background: white;
+    border: none;
+}
+
+span.right {
+    position: absolute;
+    right: 0;
+    display: none;
+}
+
+button.add {
+    display: none;
+}
+
+/* button.delete { */
+/*     display: none; */
+/* } */
+
+.sub:hover {
+    border-bottom: 1px solid black;
+ }
+
+.sub:hover > button {
+    display: inline;
+}
+
+.sub:hover > span.right {
+    display: inline;
 }
