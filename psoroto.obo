@@ -1,0 +1,2216 @@
+format-version: 1.2
+date: 28:02:2013 16:24
+saved-by: Birger Scholz
+auto-generated-by: OBO-Edit 2.3
+subsetdef: MF1 "<ECVAM MF1 yolk sac vessel defect>"
+subsetdef: MF2 "<ECVAM MF2 allantois not fused>"
+subsetdef: MF3 "<ECVAM MF3 allantois large sized>"
+subsetdef: MF4 "<ECVAM MF4 flexion deficient embryo>"
+subsetdef: MF5 "<ECVAM MF5 pericardial oedema>"
+subsetdef: VMFA0 "<van Maele-Fabry score 0 for visceral yolk sac>"
+subsetdef: VMFA1 "<van Maele-Fabry score 1 for visceral yolk sac>"
+subsetdef: VMFA2 "<van Maele-Fabry score 2 for visceral yolk sac>"
+subsetdef: VMFA3 "<van Maele-Fabry score 3 for visceral yolk sac>"
+subsetdef: VMFA4 "<van Maele-Fabry score 4 for visceral yolk sac>"
+subsetdef: VMFA5 "<van Maele-Fabry score 5 for visceral yolk sac>"
+subsetdef: VMFB0 "<van Maele-Fabry score 0 for allantois>"
+subsetdef: VMFB1 "<van Maele-Fabry score 1 for allantois>"
+subsetdef: VMFB2 "<van Maele-Fabry score 2 for allantois>"
+subsetdef: VMFB3 "<van Maele-Fabry score 3 for allantois>"
+subsetdef: WEC "<Whole embryo culture>"
+default-namespace: phenosemantic_entity
+
+[Term]
+id: PSO:0000000
+name: temporary
+created_by: BSch
+creation_date: 2012-08-12T09:45:30Z
+
+[Term]
+id: PSO:0000001
+name: phenotypic entity
+namespace: phenotypic_entity
+def: "Observation dependent entity that reflects a property in unicellular, colonial or multicellular organisms. Encompasses all entities that are self-contained or have nested self-contained entities or partial biosystemic entities at a given moment of observation. Does not reflect entities in a hierarchical level lower than the cellular level (i.e. does not reflect individual molecular types or molecular pathways)." [PSOC:BSCH]
+created_by: BSch
+creation_date: 2012-08-12T09:47:16Z
+
+[Term]
+id: PSO:0000002
+name: biohierarchical entity
+namespace: biohierarchical_entity
+def: "Biological entity that is described in terms of it being classified in a organizational hierarchy, meaning that it has the inherent condition of both being a lower level entity and being composed of lower level entities." [PMID:16594088]
+created_by: BSch
+creation_date: 2012-08-12T09:49:34Z
+
+[Term]
+id: PSO:0000003
+name: body level entity
+namespace: biohierarchical_entity
+def: "Biological entity that is described in terms of it being classified in a organizational hierarchy and reflecting the body of a self-contained multi-cellular organism or the remainder of such after its death. Can be described as being the sum of multicellular level entities." [PSOC:BSCH]
+is_a: PSO:0000002 ! biohierarchical entity
+created_by: BSch
+creation_date: 2012-08-12T09:55:11Z
+
+[Term]
+id: PSO:0000004
+name: multi-cellular level entity
+namespace: biohierarchical_entity
+is_a: PSO:0000002 ! biohierarchical entity
+created_by: BSch
+creation_date: 2012-08-12T09:59:50Z
+
+[Term]
+id: PSO:0000005
+name: haplontic quality
+namespace: biocyclic_entity
+synonym: "haplontic life cycle quality" EXACT [PSOC:BSCH]
+is_a: PSO:0000009 ! life cycle entity
+created_by: BSCH
+creation_date: 2012-09-25T15:37:43Z
+
+[Term]
+id: PSO:0000006
+name: cellular level entity
+namespace: biohierarchical_entity
+def: "Entity defined by it being representative of a self-contained sub-entity within a multi-cellular organism or a unicellular interval state within the organismal biological life cycle or a unicellular organism." [PSOC:BSCH]
+is_a: PSO:0000002 ! biohierarchical entity
+created_by: BSch
+creation_date: 2012-08-12T10:00:17Z
+
+[Term]
+id: PSO:0000007
+name: pheno-ecological entity
+namespace: ecological_entity
+def: "Entity that derives its meaning from how a given organism relates to other species dissimilar organisms in its environment." [PSOC:BSCH]
+created_by: BSch
+creation_date: 2012-08-12T10:02:13Z
+
+[Term]
+id: PSO:0000008
+name: biocyclic entity
+def: "Abstraction representing a process-morphological property of an organism at a given time point of observation and from an temporal and evolutionary contextual perspective. Biocyclic entities receive their meaning by invoking a shift over life cycle generation intervals. They are nested qualities as they reflect properties of an organism that reflects the organism evolutionary lineage." [PSOC:BSCH]
+synonym: "biocyclic quality entity" EXACT [PSOC:BSCH]
+is_a: PSO:0000017 ! pheno-organismal entity
+created_by: BSch
+creation_date: 2012-08-12T10:02:48Z
+
+[Term]
+id: PSO:0000009
+name: life cycle entity
+synonym: "life cycle quality entity" EXACT [PSOC:BSCH]
+is_a: PSO:0000008 ! biocyclic entity
+created_by: BSch
+creation_date: 2012-08-12T10:03:27Z
+
+[Term]
+id: PSO:0000010
+name: hereditary entity
+def: "Abstraction associated with the biological process whereby genetic and non-genetic factors are transmitted from one generation to the next in unicellular, colonial or multicellular organisms." [PSOC:BSCH]
+synonym: "hereditary quality entity" EXACT [PSOC:BSCH]
+is_a: PSO:0000008 ! biocyclic entity
+created_by: BSch
+creation_date: 2012-08-12T10:03:45Z
+
+[Term]
+id: PSO:0000011
+name: taxonomic entity
+synonym: "taxonomic quality entity" RELATED [PSOC:BSCH]
+is_a: PSO:0000008 ! biocyclic entity
+created_by: BSch
+creation_date: 2012-08-12T10:04:49Z
+
+[Term]
+id: PSO:0000012
+name: epigenetic inheritance quality
+namespace: biocyclic_entity
+is_a: PSO:0000010 ! hereditary entity
+created_by: BSCH
+creation_date: 2012-09-25T15:40:44Z
+
+[Term]
+id: PSO:0000013
+name: biostructural entity
+def: "Abstraction reflecting that a given phenotypic entity has composition of substance and occupies a three dimensional space within a normative temperature range at a given time point. Encompasses all three classical states of matter. Higher or lower biohierarchical level entities may entail identical or different phases of matter." [PSOC:BSCH]
+is_a: PSO:0000017 ! pheno-organismal entity
+created_by: BSch
+creation_date: 2012-08-12T10:06:15Z
+
+[Term]
+id: PSO:0000014
+name: bioquality entity
+def: "Abstraction reflecting a characteristic of an phenotypic entity that is only reflective of a given biohierarchical levels (scale-variant or non-scalar). Derives from the interaction over time between its nested units on a lower biohierarchical level where none of the lower level entities can be described to have the same characteristic. Is entailed within biostructural entities." [PSOC:BSCH]
+synonym: "non-scalar bioproperty entity" EXACT [PSOC:BSCH]
+is_a: PSO:0000017 ! pheno-organismal entity
+created_by: BSch
+creation_date: 2012-08-12T10:06:30Z
+
+[Term]
+id: PSO:0000015
+name: bioattribute entity
+def: "Abstraction reflecting a characteristic of an phenotypic entity that is applicable on multiple levels (scale-similar or scalar) within a biohierarchy. Is entailed within biostructural entities." [PSOC:BSCH]
+comment: Some attributes may only become connected to structural entities if the biostructural entity has the right overall properties. Only solid biostructures may have integrity and texture attributes [PSOC:BSCH].
+synonym: "scalar bioproperty entity" EXACT [PSOC:BSCH]
+is_a: PSO:0000017 ! pheno-organismal entity
+created_by: BSch
+creation_date: 2012-08-12T10:06:43Z
+
+[Term]
+id: PSO:0000016
+name: bioexperience entity
+def: "Abstraction reflecting temporal and environment-dependent properties of phenotypical entities positioned on the body or cellular level of organismal biohierarchy and which entail complex adaptive abilities. Represents entities that derive their meaning from a situation when environmental stimuli present at one or several earlier observational time points in the individual life history of the bearer that are able to influence the adaptive or reactive response of bearer to new environmental stimuli at a given observational time point." [PSOC:BSCH]
+synonym: "bioexperience quality entity" EXACT [PSOC:BSCH]
+is_a: PSO:0000017 ! pheno-organismal entity
+created_by: BSch
+creation_date: 2012-08-12T10:07:16Z
+
+[Term]
+id: PSO:0000017
+name: pheno-organismal entity
+def: "Phenotypic entity that represents a property of an organism and which is described according to the entities hierarchical relation to its nested subunits within a process-morphological framework." [PSOC:BSCH]
+comment: All structure changes over time, and consequently also all processes encapsulated within structure. As structure can be conceived as being hierarchical nested and processes depend on nested structural units, all processes are consequently inherent in structure itself rather than separate [PSOC:BSCH].
+synonym: "process-morphological entity" RELATED [PSOC:BSCH]
+created_by: BSch
+creation_date: 2012-08-12T10:07:35Z
+
+[Term]
+id: PSO:0000018
+name: symbiotic entity
+is_a: PSO:0000007 ! pheno-ecological entity
+created_by: BSch
+creation_date: 2012-08-12T10:09:33Z
+
+[Term]
+id: PSO:0000019
+name: phenotypic boundary entity
+def: "Quality-type entity reflecting of the total organizational/process-morphological boundaries of a self-contained complex adaptive biosystem (organism) at a given time point in the bearers life cycle. The ability of self-containment in relation to its environment is derived from the interactions of its components on a lower level biohierarchical level. Such entities are the total sum of all their partial and nested meronyms." [PSOC:BSCH]
+is_a: PSO:0000060 ! biosystemic entity
+created_by: BSch
+creation_date: 2012-08-12T10:10:07Z
+
+[Term]
+id: PSO:0000020
+name: partial biosystemic entity
+def: "Entity that has the condition of being or affecting only a part of a phenotypic boundary entity without being a lower level nested subunit to that entity." [PSOC:BSCH]
+comment: PSO uses the part_of relation for such entities whereas the relation to any nested entity has a top-down directionality and requires the use of has_element or entails_quality. Example: organismal and anatomical subdivisions such as caudal region. "caudal region" <part_of> "embryo proper" [PSOC:BSCH].
+is_a: PSO:0000060 ! biosystemic entity
+created_by: BSch
+creation_date: 2012-08-12T10:10:34Z
+
+[Term]
+id: PSO:0000021
+name: genetic inheritance quality
+namespace: biocyclic_entity
+is_a: PSO:0000010 ! hereditary entity
+created_by: BSCH
+creation_date: 2012-09-25T15:41:08Z
+
+[Term]
+id: PSO:0000022
+name: diplontic quality
+synonym: "diplontic life cycle quality" EXACT [PSOC:BSCH]
+is_a: PSO:0000009 ! life cycle entity
+created_by: BSch
+creation_date: 2012-08-12T10:16:04Z
+
+[Term]
+id: PSO:0000023
+name: taxonomic species
+is_a: PSO:0000011 ! taxonomic entity
+created_by: BSch
+creation_date: 2012-08-12T10:16:31Z
+
+[Term]
+id: PSO:0000024
+name: somatic inheritance quality
+namespace: biocyclic_entity
+is_a: PSO:0000010 ! hereditary entity
+created_by: BSCH
+creation_date: 2012-09-25T15:41:26Z
+
+[Term]
+id: PSO:0000025
+name: taxonomic class
+namespace: biocyclic_entity
+is_a: PSO:0000011 ! taxonomic entity
+created_by: BSCH
+creation_date: 2012-09-25T15:44:51Z
+
+[Term]
+id: PSO:0000026
+name: taxonomic family
+namespace: biocyclic_entity
+is_a: PSO:0000011 ! taxonomic entity
+created_by: BSCH
+creation_date: 2012-09-25T15:45:04Z
+
+[Term]
+id: PSO:0000027
+name: taxonomic genus
+namespace: biocyclic_entity
+is_a: PSO:0000011 ! taxonomic entity
+created_by: BSCH
+creation_date: 2012-09-25T15:45:15Z
+
+[Term]
+id: PSO:0000028
+name: taxonomic kingdom
+namespace: biocyclic_entity
+is_a: PSO:0000011 ! taxonomic entity
+created_by: BSCH
+creation_date: 2012-09-25T15:45:22Z
+
+[Term]
+id: PSO:0000029
+name: taxonomic order
+namespace: biocyclic_entity
+is_a: PSO:0000011 ! taxonomic entity
+created_by: BSCH
+creation_date: 2012-09-25T15:45:37Z
+
+[Term]
+id: PSO:0000030
+name: taxonomic phylum
+namespace: biocyclic_entity
+is_a: PSO:0000011 ! taxonomic entity
+created_by: BSCH
+creation_date: 2012-09-25T15:45:45Z
+
+[Term]
+id: PSO:0000031
+name: taxonomic subspecies
+namespace: biocyclic_entity
+is_a: PSO:0000011 ! taxonomic entity
+created_by: BSCH
+creation_date: 2012-09-25T15:46:00Z
+
+[Term]
+id: PSO:0000032
+name: taxonomic strain
+namespace: biocyclic_entity
+is_a: PSO:0000011 ! taxonomic entity
+created_by: BSCH
+creation_date: 2012-09-25T15:46:18Z
+
+[Term]
+id: PSO:0000033
+name: taxonomic subfamily
+namespace: biocyclic_entity
+is_a: PSO:0000011 ! taxonomic entity
+created_by: BSCH
+creation_date: 2012-09-25T15:46:37Z
+
+[Term]
+id: PSO:0000034
+name: endosymbiotic entity
+def: "Symbiotic relationship in which one symbiont lives within the tissues of the other, either in the intracellular space or in the extracellular space of an multicellular organism." [PSOC:BSCH]
+is_a: PSO:0000018 ! symbiotic entity
+created_by: BSCH
+creation_date: 2012-09-25T16:11:19Z
+
+[Term]
+id: PSO:0000035
+name: ectosymbiotic entity
+def: "Symbiotic relationship in which a symbiont lives on the body surface of the host, including the inner surface of the digestive tract or the ducts of exocrine glands. The parasitic organism is generally much smaller than its host or hosts." [PSOC:BSCH]
+synonym: "exosymbiotic quality" EXACT [PSOC:BSCH]
+is_a: PSO:0000018 ! symbiotic entity
+created_by: BSCH
+creation_date: 2012-09-25T16:11:51Z
+
+[Term]
+id: PSO:0000036
+name: mutualistic symbiotic entity
+def: "Symbiotic relationship between individuals of different species where both individuals benefit under a given set of environmental conditions." [PSOC:BSCH]
+synonym: "mutualism" BROAD [PSOC:BSCH]
+is_a: PSO:0000018 ! symbiotic entity
+created_by: BSCH
+creation_date: 2012-09-25T16:15:18Z
+
+[Term]
+id: PSO:0000037
+name: commensal symbiotic entity
+def: "Symbiotic relationship between two organisms of different species where one organism benefits without affecting the other within a given set of environmental conditions." [PSOC:BSCH]
+is_a: PSO:0000018 ! symbiotic entity
+created_by: BSCH
+creation_date: 2012-09-25T16:17:01Z
+
+[Term]
+id: PSO:0000038
+name: parasitic symbiotic entity
+def: "Symbiotic relationship between organisms of different species where one organism, the parasite, benefits at the expense of the other within a given set of environmental conditions." [PSOC:BSCH]
+is_a: PSO:0000018 ! symbiotic entity
+created_by: BSCH
+creation_date: 2012-09-25T16:20:13Z
+
+[Term]
+id: PSO:0000039
+name: metabiosis entity
+def: "Relationship where one organism creates or prepares a suitable environment for a second organism." [PSOC:BSCH]
+is_a: PSO:0000018 ! symbiotic entity
+created_by: BSCH
+creation_date: 2012-09-25T16:24:03Z
+
+[Term]
+id: PSO:0000040
+name: amensalic symbiotic entity
+def: "Relation where one organism of one species is inhibited or completely obliterated by an organism of an different species which remains unaffected." [PSOC:BSCH]
+is_a: PSO:0000018 ! symbiotic entity
+created_by: BSCH
+creation_date: 2012-09-25T16:26:19Z
+
+[Term]
+id: PSO:0000041
+name: trophic entity
+namespace: ecological_entity
+def: "Entity that reflects a positioning of the organism within a given food chain/ecological web." [PSOC:BSCH]
+comment: Meaning derives not from the organisms individual properties but rather from its position from a ecological context.
+synonym: "trophic quality entity" EXACT [PSOC:BSCH]
+is_a: PSO:0000007 ! pheno-ecological entity
+created_by: BSCH
+creation_date: 2012-09-25T16:32:05Z
+
+[Term]
+id: PSO:0000042
+name: primary producer entity
+namespace: ecological_entity
+is_a: PSO:0000041 ! trophic entity
+created_by: BSCH
+creation_date: 2012-09-25T16:47:16Z
+
+[Term]
+id: PSO:0000043
+name: herbivore entity
+namespace: ecological_entity
+is_a: PSO:0000041 ! trophic entity
+created_by: BSCH
+creation_date: 2012-09-25T16:47:38Z
+
+[Term]
+id: PSO:0000044
+name: predator entity
+namespace: ecological_entity
+is_a: PSO:0000041 ! trophic entity
+created_by: BSCH
+creation_date: 2012-09-25T16:47:51Z
+
+[Term]
+id: PSO:0000045
+name: apex entity
+namespace: ecological_entity
+synonym: "apex predator quality" RELATED [PSOC:BSCH]
+is_a: PSO:0000041 ! trophic entity
+created_by: BSCH
+creation_date: 2012-09-25T16:48:01Z
+
+[Term]
+id: PSO:0000046
+name: carnivore entity
+namespace: ecological_entity
+is_a: PSO:0000041 ! trophic entity
+created_by: BSCH
+creation_date: 2012-09-25T16:49:04Z
+
+[Term]
+id: PSO:0000047
+name: omnivore entity
+namespace: ecological_entity
+is_a: PSO:0000041 ! trophic entity
+created_by: BSCH
+creation_date: 2012-09-25T16:50:02Z
+
+[Term]
+id: PSO:0000048
+name: solid bioattribute entity
+def: "Abstraction reflecting a characteristic of an solid biostructural entity that is applicable on multiple levels (scale-similar or scalar) within a biohierarchy." [PSOC:BSCH]
+is_a: PSO:0000015 ! bioattribute entity
+created_by: Birger Scholz
+creation_date: 2013-02-27T17:44:50Z
+
+[Term]
+id: PSO:0000049
+name: population level entity
+namespace: biohierarchical_entity
+is_a: PSO:0000002 ! biohierarchical entity
+created_by: BSCH
+creation_date: 2012-09-25T17:02:21Z
+
+[Term]
+id: PSO:0000050
+name: haploid genetic quality
+namespace: biocyclic_entity
+is_a: PSO:0000021 ! genetic inheritance quality
+created_by: BSCH
+creation_date: 2012-09-25T17:12:37Z
+
+[Term]
+id: PSO:0000051
+name: diploid genetic quality
+namespace: biocyclic_entity
+is_a: PSO:0000021 ! genetic inheritance quality
+created_by: BSCH
+creation_date: 2012-09-25T17:12:58Z
+
+[Term]
+id: PSO:0000052
+name: inbred genetic quality
+namespace: biocyclic_entity
+is_a: PSO:0000021 ! genetic inheritance quality
+created_by: BSCH
+creation_date: 2012-09-25T17:18:33Z
+
+[Term]
+id: PSO:0000053
+name: outbred genetic quality
+namespace: biocyclic_entity
+is_a: PSO:0000021 ! genetic inheritance quality
+created_by: BSCH
+creation_date: 2012-09-25T17:18:49Z
+
+[Term]
+id: PSO:0000054
+name: sex determination karyotype
+namespace: biocyclic_entity
+is_a: PSO:0000021 ! genetic inheritance quality
+created_by: BSCH
+creation_date: 2012-09-25T17:24:23Z
+
+[Term]
+id: PSO:0000055
+name: diplontic developmental quality
+is_a: PSO:0000022 ! diplontic quality
+created_by: BSCH
+creation_date: 2012-09-25T17:30:13Z
+
+[Term]
+id: PSO:0000056
+name: diplontic morphogenesis
+is_a: PSO:0000055 ! diplontic developmental quality
+created_by: BSCH
+creation_date: 2012-09-25T17:30:33Z
+
+[Term]
+id: PSO:0000057
+name: diplontic organogenesis
+is_a: PSO:0000055 ! diplontic developmental quality
+created_by: BSCH
+creation_date: 2012-09-25T17:30:46Z
+
+[Term]
+id: PSO:0000058
+name: diplontic histogenesis
+is_a: PSO:0000055 ! diplontic developmental quality
+created_by: BSCH
+creation_date: 2012-09-25T17:30:57Z
+
+[Term]
+id: PSO:0000059
+name: liquid bioattribute entity
+def: "Abstraction reflecting a characteristic of an liquid biostructural entity that is applicable on multiple levels (scale-similar or scalar) within a biohierarchy." [PSOC:BSCH]
+is_a: PSO:0000015 ! bioattribute entity
+created_by: Birger Scholz
+creation_date: 2013-02-27T17:46:15Z
+
+[Term]
+id: PSO:0000060
+name: biosystemic entity
+synonym: "biological complex adaptive entity " EXACT [PSOC:BSCH]
+is_a: PSO:0000017 ! pheno-organismal entity
+created_by: BSCH
+creation_date: 2012-09-27T13:13:57Z
+
+[Term]
+id: PSO:0000061
+name: nested biosystemic entity
+def: "Lower-level phenotypic entity to phenotypic boundary entity. The relation between phenotypic boundary entities and nested biosystem entities are described by \"has_component\" and \"has_participant\" (but not \"part_of\") and has biohierarchical top-down directionality." [PSOC:BSCH]
+is_a: PSO:0000060 ! biosystemic entity
+created_by: BSCH
+creation_date: 2012-09-27T13:30:41Z
+
+[Term]
+id: PSO:0000062
+name: gaseous bioattribute entity
+def: "Abstraction reflecting a characteristic of an gaseous biostructural entity that is applicable on multiple levels (scale-similar or scalar) within a biohierarchy." [PSOC:BSCH]
+is_a: PSO:0000015 ! bioattribute entity
+created_by: Birger Scholz
+creation_date: 2013-02-27T17:46:27Z
+
+[Term]
+id: PSO:0000063
+name: space entity
+def: "Biomatter entity that entails a meronym entity of gaseous and/or liquid nature within the closed or partially closed boundaries of a holonym entity of solid nature." [PSOC:BSCH, WordNet:space]
+synonym: "anatomical space entity" RELATED [PSOC:BSCH]
+is_a: PSO:0000013 ! biostructural entity
+created_by: Birger Scholz
+creation_date: 2013-02-28T11:42:59Z
+
+[Term]
+id: PSO:0000064
+name: 1-D extent
+xref: PATO:0001708 "1-D extent"
+is_a: PSO:0000066 ! size
+created_by: Birger Scholz
+creation_date: 2012-10-24T16:59:07Z
+
+[Term]
+id: PSO:0000065
+name: shape
+def: "A scalar physical property inherent in an biostructural entity by virtue of it depicting a empirically determined spatial attribute of that entity as defined by its outline." [PATO:0000052, PSOC:BSCH]
+subset: MF1
+subset: VMFA2
+subset: VMFA3
+subset: VMFA4
+subset: VMFA5
+subset: WEC
+xref: PATO:0000052 "shape"
+is_a: PSO:0000048 ! solid bioattribute entity
+created_by: Birger Scholz
+creation_date: 2012-10-22T16:42:25Z
+
+[Term]
+id: PSO:0000066
+name: size
+def: "A scalar physical property inherent in an biostructural entity by virtue of it depicting a empirically determined  relational attribute assessed in terms of the degree by which it deviates from the norm (requiring comparative background data). The size refers to the amount of three-dimensional space that is occupied by the entity." [PATO:0000117, PSOC:BSCH]
+subset: WEC
+synonym: "size" RELATED [PSOC:BIRSCH]
+xref: PATO:0000117 "size"
+is_a: PSO:0000048 ! solid bioattribute entity
+is_a: PSO:0000059 ! liquid bioattribute entity
+created_by: Birger Scholz
+creation_date: 2012-10-22T16:42:56Z
+
+[Term]
+id: PSO:0000067
+name: integrity
+def: "A scalar physical property inherent in an biostructural entity by virtue of it depicting an empirically determined undivided or unbroken completeness or totality with nothing wanting." [PSOC:BSCH]
+synonym: "wholeness" RELATED [PSOC:BSCH]
+xref: PATO:0001446 "whole"
+is_a: PSO:0000048 ! solid bioattribute entity
+created_by: Birger Scholz
+creation_date: 2012-10-22T16:43:06Z
+
+[Term]
+id: PSO:0000068
+name: aggregation
+def: "A spatial pattern inhering in a biostructural entity  by virtue of that entity being gathered or tending to gather into a mass or whole." [PATO:0001629, PSOC:BSCH]
+synonym: "aggregation position pattern" RELATED [PSOC:BSCH]
+xref: PATO:0001629
+is_a: PSO:0000093 ! position
+created_by: Birger Scholz
+creation_date: 2013-02-28T13:13:10Z
+
+[Term]
+id: PSO:0000069
+name: solid entity
+def: "Biomatter entity that entails the distinct classical matter phase of being solid within a normative temperature range at a given time point. Is neither liquid nor gaseous. Higher or lower biohierarchical level entities may entail identical or different matter phases." [PSOC:BSCH]
+synonym: "solid biomatter entity" EXACT [PSOC:BSCH]
+is_a: PSO:0000013 ! biostructural entity
+created_by: Birger Scholz
+creation_date: 2012-10-22T16:43:57Z
+
+[Term]
+id: PSO:0000070
+name: liquid entity
+def: "Biomatter entity that entails the distinct classical matter phase of being liquid within a normative temperature range at a given time point. Is neither solid nor gaseous. Higher or lower biohierarchical level entities may entail identical or different matter phases." [PSOC:BSCH]
+synonym: "liquid biomatter entity" EXACT [PSOC:BSCH]
+is_a: PSO:0000013 ! biostructural entity
+created_by: Birger Scholz
+creation_date: 2012-10-22T16:44:08Z
+
+[Term]
+id: PSO:0000071
+name: gaseous entity
+def: "Biomatter entity that entails the distinct classical matter phase of being gaseous within a normative temperature range at a given time point. Is neither solid nor liquid. Higher or lower biohierarchical level entities may entail identical or different matter phases." [PSOC:BSCH]
+synonym: "gaseous biomatter entity" EXACT [PCOSA:BSCH]
+is_a: PSO:0000013 ! biostructural entity
+created_by: Birger Scholz
+creation_date: 2012-10-22T16:44:23Z
+
+[Term]
+id: PSO:0000072
+name: 2-D extent
+xref: PATO:0001709 "2-D extent"
+is_a: PSO:0000066 ! size
+created_by: Birger Scholz
+creation_date: 2012-10-24T16:59:23Z
+
+[Term]
+id: PSO:0000073
+name: 3-D extent
+xref: PATO:0001710 "3-D extent"
+is_a: PSO:0000066 ! size
+created_by: Birger Scholz
+creation_date: 2012-10-24T16:59:32Z
+
+[Term]
+id: PSO:0000074
+name: 2-D shape
+def: "A scalar physical property inherent in an biostructural entity by virtue of it depicting a empirically determined  2-D spatial attribute of that entity as defined by its outline." [PSOC:BSCH]
+xref: PATO:0002006 "2-D shape"
+is_a: PSO:0000065 ! shape
+created_by: Birger Scholz
+creation_date: 2012-10-24T17:00:08Z
+
+[Term]
+id: PSO:0000075
+name: 3-D shape
+def: "A scalar physical property inherent in an biostructural entity by virtue of it depicting a empirically determined  3-D spatial attribute of that entity as defined by its outline." [PATOC:OREGON]
+xref: PATO:0002266 "3-D shape"
+is_a: PSO:0000065 ! shape
+created_by: Birger Scholz
+creation_date: 2012-10-24T17:00:16Z
+
+[Term]
+id: PSO:0000076
+name: texture
+def: "A scalar physical property inherent in an biostructural entity by virtue of it depicting a empirically determined relative size, organization and distribution of its surface elements or the representation or invention of the appearance of its surface; visual and tactile surface characteristics." [PATO:0000150, PSOC:BSCH]
+comment: Descriptive attribute relations:\nIs_irregular_for / has_irregular_attribute.\nIs_blistered_for / has_blistered_attribute.
+xref: PATO:0000150 "texture"
+is_a: PSO:0000048 ! solid bioattribute entity
+created_by: Birger Scholz
+creation_date: 2012-10-24T17:03:20Z
+
+[Term]
+id: PSO:0000077
+name: concavity shape
+def: "Surface shape that refers to the inward or outward curvature of the surface." [PATOC:MAH]
+xref: PATO:0002005 "concavity"
+is_a: PSO:0000065 ! shape
+created_by: Birger Scholz
+creation_date: 2012-10-24T17:14:44Z
+
+[Term]
+id: PSO:0000078
+name: concave shape
+def: "A shape quality in a bearer by virtue of the bearers curving inward." [WordNet:concave]
+xref: PATO:0001857 "concave"
+is_a: PSO:0000077 ! concavity shape
+created_by: Birger Scholz
+creation_date: 2012-10-24T17:16:44Z
+
+[Term]
+id: PSO:0000079
+name: convex shape
+def: "A shape quality that obtains by virtue of the bearer having inward facing edges; having a surface or boundary that curves or bulges outward, as the exterior of a sphere." [PATOC:GVG]
+xref: PATO:0001355 "convex"
+is_a: PSO:0000077 ! concavity shape
+created_by: Birger Scholz
+creation_date: 2012-10-24T17:17:57Z
+
+[Term]
+id: PSO:0000080
+name: area
+xref: PATO:0001323 "area"
+is_a: PSO:0000072 ! 2-D extent
+created_by: Birger Scholz
+creation_date: 2012-10-24T17:19:33Z
+
+[Term]
+id: PSO:0000081
+name: volume
+xref: PATO:0000918 "volume"
+is_a: PSO:0000073 ! 3-D extent
+created_by: Birger Scholz
+creation_date: 2012-10-24T17:19:41Z
+
+[Term]
+id: PSO:0000082
+name: depth
+def: "A 1-D extent quality inhering in a bearer by virtue of the bearers downward or backward or inward dimension." [WordNet:depth]
+xref: PATO:0001595 "depth"
+is_a: PSO:0000064 ! 1-D extent
+created_by: Birger Scholz
+creation_date: 2012-10-24T17:20:19Z
+
+[Term]
+id: PSO:0000083
+name: height
+def: "A 1-D extent quality inhering in a bearer by virtue of the bearers vertical dimension of extension." [PATOC:GVG]
+xref: PATO:0000119 "height"
+is_a: PSO:0000064 ! 1-D extent
+created_by: Birger Scholz
+creation_date: 2012-10-24T17:22:30Z
+
+[Term]
+id: PSO:0000084
+name: length
+def: "A 1-D extent quality which is equal to the distance between two points." [PATOC:GVG]
+xref: PATO:0000122 "length"
+is_a: PSO:0000064 ! 1-D extent
+created_by: Birger Scholz
+creation_date: 2012-10-24T17:23:26Z
+
+[Term]
+id: PSO:0000085
+name: thickness
+def: "A 1-D extent quality which is equal to the dimension through an object as opposed to its length or width." [WordNet:thickness]
+xref: PATO:0000915 "thickness"
+is_a: PSO:0000064 ! 1-D extent
+created_by: Birger Scholz
+creation_date: 2012-10-24T17:24:48Z
+
+[Term]
+id: PSO:0000086
+name: width
+def: "A 1-D extent quality which is equal to the distance from one side of an object to another side which is opposite." [PATOC:GVG]
+xref: PATO:0000921 "width"
+is_a: PSO:0000064 ! 1-D extent
+created_by: Birger Scholz
+creation_date: 2012-10-24T17:26:09Z
+
+[Term]
+id: PSO:0000087
+name: pressure
+is_a: PSO:0000059 ! liquid bioattribute entity
+created_by: Birger Scholz
+creation_date: 2013-02-28T16:00:31Z
+
+[Term]
+id: PSO:0000088
+name: circumference
+is_a: PSO:0000084 ! length
+created_by: Birger Scholz
+creation_date: 2012-10-25T09:29:33Z
+
+[Term]
+id: PSO:0000089
+name: dasein
+def: "A scalar physical property inherent in an biostructural entity by virtue of it reflecting the empirically determined existence, being, or presence of that entity." [PSOC:BSCH]
+comment: Using the German "Dasein" rather than the English "count" as this word provides a better representation [PSOC:BSCH].
+subset: WEC
+is_a: PSO:0000048 ! solid bioattribute entity
+is_a: PSO:0000059 ! liquid bioattribute entity
+is_a: PSO:0000062 ! gaseous bioattribute entity
+created_by: Birger Scholz
+creation_date: 2012-10-25T19:47:15Z
+
+[Term]
+id: PSO:0000090
+name: composition
+def: "A scalar physical property inherent in an biostructural entity by virtue of the empirically determined quantitative and qualitative relation and/or ratios between its components." [PATO:0000025, PSOC:BSCH]
+comment: For instance: granular, edematous, calcified composition.
+xref: PATO:0000025 "composition"
+is_a: PSO:0000048 ! solid bioattribute entity
+is_a: PSO:0000059 ! liquid bioattribute entity
+is_a: PSO:0000062 ! gaseous bioattribute entity
+created_by: Birger Scholz
+creation_date: 2012-11-13T09:49:15Z
+
+[Term]
+id: PSO:0000091
+name: colour
+def: "A scalar physical property inherent in an biostructural entity by virtue of its empirically determined composite chromatic/optic values which are derived from hue, saturation and intensity parts." [PATO:0000014, PSOC:BSCH]
+synonym: "color" EXACT [PATOC:GCG]
+synonym: "relative colour" EXACT [PATOC:GVG]
+xref: PATO:0000014 "colour"
+is_a: PSO:0000048 ! solid bioattribute entity
+is_a: PSO:0000059 ! liquid bioattribute entity
+is_a: PSO:0000062 ! gaseous bioattribute entity
+created_by: Birger Scholz
+creation_date: 2012-11-13T15:04:34Z
+
+[Term]
+id: PSO:0000092
+name: branchiness
+def: "A compositional and shape attribute inhering in a biostructural entity by virtue of the degree to which there are subdivisions or offshoots in the entity." [PATOC:MAH]
+subset: MF1
+subset: VMFA3
+subset: VMFA4
+subset: VMFA5
+subset: WEC
+xref: PATO:0002009 "branchiness"
+is_a: PSO:0000065 ! shape
+created_by: Birger Scholz
+creation_date: 2012-11-13T15:07:12Z
+
+[Term]
+id: PSO:0000093
+name: position
+def: "A scalar physical property inherent in an biostructural entity by virtue of it depicting a empirically determined particular portion of space occupied by a that structural entity relative to other entities." [PATO:0000140, PSOC:BSCH]
+synonym: "location" RELATED [PSOC:BSCH]
+xref: PATO:0000140
+is_a: PSO:0000048 ! solid bioattribute entity
+created_by: Birger Scholz
+creation_date: 2012-11-23T17:42:55Z
+
+[Term]
+id: PSO:0000094
+name: diameter
+def: "Length of any straight line segment that passes through the center of a circle or sphere and whose endpoints lie on the circles  circumference or spheres outer boundary. For a convex shape in the plane, the diameter is defined to be the largest distance that can be formed between two opposite parallel lines tangent to its boundary." [PSOC:BSCH, WIKI:diameter]
+is_a: PSO:0000084 ! length
+created_by: Birger Scholz
+creation_date: 2013-02-06T20:10:00Z
+
+[Term]
+id: PSO:0000095
+name: viscosity
+is_a: PSO:0000059 ! liquid bioattribute entity
+created_by: Birger Scholz
+creation_date: 2013-02-28T16:00:38Z
+
+[Term]
+id: PSO:0000096
+name: flow
+is_a: PSO:0000059 ! liquid bioattribute entity
+created_by: Birger Scholz
+creation_date: 2013-02-28T16:11:29Z
+
+[Term]
+id: ROTO:0000000
+name: chorion
+namespace: phenotypic_entity
+subset: VMFB0
+subset: WEC
+synonym: "chorionic membrane" EXACT [ROTOC:BSCH]
+xref: FMA:80224 "chorion"
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: Birger Scholz
+creation_date: 2013-02-27T13:29:22Z
+
+[Term]
+id: ROTO:0000001
+name: yolk sac
+namespace: phenotypic_entity
+def: "The first of four extra-embryonic membranes to form during embryogenesis. In reptiles and birds, it arises from endoderm and mesoderm to incorporate the egg yolk into the digestive tract for nourishing the embryo. In placental mammals, its nutritional function is mostly vestigial; however, the visceral yolk sac endoderm provides for absorption of nutrients to the embryo during neurulation and it is the source of intestinal mucosa; blood cells; and germ cells. It is sometimes called the vitelline sac, which should not be confused with the vitelline membrane of the egg." [MeSH:D015017, PMID:20672346]
+synonym: "Vitelline sac of embryo" RELATED [MeSH:D015017]
+xref: CARO:0000072 "cavitated compound organ"
+xref: MeSH:A16.254.403.981 "yolk sac"
+relationship: PSRO:has_component ROTO:0000002 ! visceral yolk sac
+relationship: PSRO:has_component ROTO:0000003 ! parietal yolk sac
+relationship: PSRO:has_component ROTO:0000007 ! yolk sac cavity
+relationship: PSRO:has_component ROTO:0000018 ! yolk sac stalk
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: BSCH
+creation_date: 2012-09-27T14:22:08Z
+
+[Term]
+id: ROTO:0000002
+name: visceral yolk sac
+namespace: phenotypic_entity
+subset: MF1
+subset: VMFA0
+subset: VMFA1
+subset: VMFA2
+subset: VMFA3
+subset: VMFA4
+subset: VMFA5
+subset: WEC
+synonym: "inverted visceral yolk sac" RELATED [ROTOC:BSCH]
+synonym: "secondary yolk sac" RELATED [ROTOC:BSCH]
+xref: CARO:0000019 "compound organ component"
+xref: MP:0001718 "abnormal visceral yolk sac morphology"
+relationship: PSRO:has_component ROTO:0000017 ! visceral endoderm
+relationship: PSRO:has_component ROTO:0000021 ! visceral mesoderm
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: BSCH
+creation_date: 2012-09-27T14:48:22Z
+
+[Term]
+id: ROTO:0000003
+name: parietal yolk sac
+namespace: phenotypic_entity
+synonym: "primary yolk sac" RELATED [ROTOC:BSCH]
+relationship: PSRO:has_component ROTO:0000004 ! Reichert's membrane
+relationship: PSRO:has_component ROTO:0000005 ! parietal endoderm
+relationship: PSRO:has_component ROTO:0000006 ! trophectoderm
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: BSCH
+creation_date: 2012-09-27T14:50:02Z
+
+[Term]
+id: ROTO:0000004
+name: Reichert's membrane
+namespace: phenotypic_entity
+def: "Nonvascular basement membrane that separates the two cellular layers (parietal endoderm and trophoblast) of the parietal yolk sac." [PSOC:BSCH]
+xref: MP:0003954 "abnormal Reichert's membrane morphology"
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+created_by: BSCH
+creation_date: 2012-09-27T15:07:03Z
+
+[Term]
+id: ROTO:0000005
+name: parietal endoderm
+namespace: phenotypic_entity
+def: "Primitive endoderm-derived tissue that is part of the parietal yolk sac and lines the luminal surface of the mural trophectoderm." [PSOC:BSCH]
+synonym: "parietal extraembryonic endoderm" EXACT [ROTOC:BSCH]
+synonym: "parietal yolk sac endoderm" EXACT [ROTOC:BSCH]
+xref: CARO:0000019 "compound organ component"
+xref: MP:0011187 "abnormal parietal endoderm morphology"
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: BSCH
+creation_date: 2012-09-27T15:09:29Z
+
+[Term]
+id: ROTO:0000006
+name: trophectoderm
+namespace: phenotypic_entity
+def: "A layer of peripheral epithelial-like cells (trophoblasts) which after gastrulation is continuous with the ectoderm of the embryo proper. Develops from the trophoblast." [ROTOC:BSCH]
+comment: The trophectoderm is both an membranous organ with its protective function and a tissue in the form of an epithelium which consists of a single layer of epithelial cells.
+synonym: "trophoblast layer" RELATED [UBERON:0000088]
+synonym: "trophoderm" RELATED [UBERON:0000088]
+xref: MP:0005028 "abnormal trophectoderm morphology"
+xref: UBERON:0004345 "trophoectoderm"
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: BSCH
+creation_date: 2012-09-27T15:09:38Z
+
+[Term]
+id: ROTO:0000007
+name: yolk sac cavity
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000063 ! space entity
+created_by: BSCH
+creation_date: 2012-09-27T16:00:59Z
+
+[Term]
+id: ROTO:0000008
+name: body viability
+namespace: phenotypic_entity
+subset: WEC
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000014 ! bioquality entity
+relationship: PSRO:quality_of ROTO:0000029 ! embryo
+relationship: PSRO:quality_of ROTO:0000030 ! embryo proper
+created_by: Birger Scholz
+creation_date: 2012-11-12T14:01:16Z
+
+[Term]
+id: ROTO:0000009
+name: yolk sac blood island
+namespace: phenotypic_entity
+def: "Masses of developing blood cells attached to endothelium in the visceral yolk sac." [UBERON:0011919]
+subset: VMFA1
+subset: WEC
+synonym: "blood island " BROAD [ROTOC:BSCH]
+synonym: "visceral yolk sac blood island" EXACT [MP:0011204]
+xref: UBERON:0011919
+relationship: PSRO:has_integral_component ROTO:0000016 ! hematopoietic stem cell
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+relationship: PSRO:part_of ROTO:0000021 ! visceral mesoderm
+created_by: BSCH
+creation_date: 2012-09-27T17:23:38Z
+
+[Term]
+id: ROTO:0000010
+name: yolk sac plexus
+namespace: phenotypic_entity
+subset: MF1
+subset: VMFA3
+subset: VMFA4
+subset: VMFA5
+subset: WEC
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+relationship: PSRO:part_of ROTO:0000028 ! yolk sac vessel system
+created_by: BSCH
+creation_date: 2012-09-27T17:24:42Z
+
+[Term]
+id: ROTO:0000011
+name: vitelline artery
+namespace: phenotypic_entity
+def: "Connects the yolk sac circulation system to the dorsal aorta in the embryo proper. Is a site of  where some of first hematopoietic stem cells (HSCs) emerge within the embryo proper." [PMID:10835345, ROTOC:BSCH]
+subset: MF1
+subset: VMFA2
+subset: VMFA3
+subset: VMFA4
+subset: VMFA5
+subset: WEC
+xref: UBERON:0006002 "vitelline artery"
+relationship: PSRO:has_integral_component ROTO:0000069 ! vitelline artery endothelium
+relationship: PSRO:integral_part_of ROTO:0000028 ! yolk sac vessel system
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: BSCH
+creation_date: 2012-09-27T17:26:03Z
+
+[Term]
+id: ROTO:0000012
+name: paired vitelline vein
+namespace: phenotypic_entity
+def: "Venous vessel connecting the visceral yolk sac via the common cardinal vein to the sinus venosus of the early heat. There are two key vessels, the right and left vitelline veins." [ROTOC:BSCH]
+subset: MF1
+subset: VMFA2
+subset: VMFA3
+subset: VMFA4
+subset: VMFA5
+subset: WEC
+synonym: "omphalomesenteric vein" RELATED [ROTOC:BSCH]
+synonym: "paired omphalomesenteric vein" EXACT [ROTOC:BSCH]
+relationship: PSRO:integral_part_of ROTO:0000028 ! yolk sac vessel system
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: BSCH
+creation_date: 2012-09-27T17:26:32Z
+
+[Term]
+id: ROTO:0000013
+name: blood
+namespace: phenotypic_entity
+def: "Tissue like circulating body substance which consists of blood plasma and hemoglobin-carrying red blood cells." [ROTOC:BSCH]
+synonym: "vertebrate blood" RELATED [ROTOC:BSCH]
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000070 ! liquid entity
+created_by: BSCH
+creation_date: 2012-09-27T17:27:01Z
+
+[Term]
+id: ROTO:0000014
+name: hematopoiesis
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000014 ! bioquality entity
+relationship: PSRO:quality_of ROTO:0000069 ! vitelline artery endothelium
+relationship: PSRO:quality_of ROTO:0000070 ! umbilical artery endothelium
+created_by: BSCH
+creation_date: 2012-09-28T12:59:12Z
+
+[Term]
+id: ROTO:0000015
+name: erythropoiesis
+namespace: phenotypic_entity
+def: "Process by which erythrocytes (red blood cells) are produced. Considered to be ongoing if the biological system in question is functional and there is an observed presence of red blood cells." [ROTOC:BSCH]
+synonym: "primary erythropoiesis" EXACT [ROTOC:BSCH]
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000014 ! bioquality entity
+relationship: PSRO:part_of ROTO:0000014 ! hematopoiesis
+relationship: PSRO:quality_of ROTO:0000009 ! yolk sac blood island
+created_by: BSCH
+creation_date: 2012-09-28T13:10:29Z
+
+[Term]
+id: ROTO:0000016
+name: hematopoietic stem cell
+namespace: phenotypic_entity
+synonym: "Hemocytoblast" RELATED [ROTOC:BSCH]
+synonym: "HSC" EXACT [ROTOC:BSCH]
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000006 ! cellular level entity
+relationship: PSRO:is_type_of PSO:0000061 ! nested biosystemic entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: BSCH
+creation_date: 2012-09-28T13:19:19Z
+
+[Term]
+id: ROTO:0000017
+name: visceral endoderm
+namespace: phenotypic_entity
+subset: WEC
+synonym: "visceral yolk sac endoderm" EXACT [ROTOC:BSCH]
+relationship: PSRO:has_integral_component ROTO:0000020 ! visceral endodermal cell
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: BSCH
+creation_date: 2012-09-28T13:32:05Z
+
+[Term]
+id: ROTO:0000018
+name: yolk sac stalk
+namespace: phenotypic_entity
+def: "A tube that connects the midgut of the embryo to the yolk sac outside the embryo through the umbilical opening. Becomes established by the end of the embryonic rotation when the embryo shifts from a dorsally concave to a dorsally convex shape. The tube becomes reduced to nothingness as the embryo grows. The endodermal lining of the yolk stalk is continuous with the endoderm of the gastrointestinal tract." [ROTOC:BSCH]
+comment: Meckel's diverticulum - gastrointestinal tract developmental abnormality due to persistence of the early vitelline duct region.
+subset: VMFA2
+subset: VMFA3
+subset: VMFA4
+subset: WEC
+synonym: "omphalomesenteric duct" EXACT [ROTOC:BSCH]
+synonym: "vitelline duct" EXACT [ROTOC:BSCH]
+synonym: "yolk stalk" RELATED [ROTOC:BSCH]
+xref: MeSH:A16.920 "Vitelline Duct"
+relationship: PSRO:has_component ROTO:0000017 ! visceral endoderm
+relationship: PSRO:has_component ROTO:0000021 ! visceral mesoderm
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+relationship: PSRO:part_of ROTO:0000002 ! visceral yolk sac
+relationship: PSRO:part_of ROTO:0000019 ! embryonic midgut
+created_by: Birger Scholz
+creation_date: 2012-10-22T16:28:59Z
+
+[Term]
+id: ROTO:0000019
+name: embryonic midgut
+namespace: phenotypic_entity
+subset: VMFA0
+subset: VMFA1
+subset: VMFA2
+subset: VMFA3
+subset: VMFA4
+subset: VMFA5
+subset: WEC
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: Birger Scholz
+creation_date: 2012-10-22T17:22:29Z
+
+[Term]
+id: ROTO:0000020
+name: visceral endodermal cell
+namespace: phenotypic_entity
+def: "Individual cell in the inner of the three germ layers of an embryo." [ROTOC:BSCH]
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000006 ! cellular level entity
+relationship: PSRO:is_type_of PSO:0000061 ! nested biosystemic entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: Birger Scholz
+creation_date: 2012-10-23T17:08:02Z
+
+[Term]
+id: ROTO:0000021
+name: visceral mesoderm
+namespace: phenotypic_entity
+synonym: "visceral yolk sac mesoderm" EXACT [ROTOC:BSCH]
+relationship: PSRO:has_component ROTO:0000022 ! visceral mesenchymal cell
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: Birger Scholz
+creation_date: 2012-10-23T17:35:03Z
+
+[Term]
+id: ROTO:0000022
+name: visceral mesenchymal cell
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000006 ! cellular level entity
+relationship: PSRO:is_type_of PSO:0000061 ! nested biosystemic entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: Birger Scholz
+creation_date: 2012-10-23T17:36:53Z
+
+[Term]
+id: ROTO:0000023
+name: histotrophic uptake
+namespace: phenotypic_entity
+def: "Process where the nutrients are absorbed through the visceral yolk sac endoderm from the yolk sac cavity through cellular endocytosis." [PMID:20672346, ROTOC:BSCH]
+comment: The presence of growth and body viability can be inferred to proof of histotrophic uptake (ROTOC:BSCH).
+subset: VMFA1
+subset: VMFA2
+subset: VMFA3
+subset: VMFA4
+subset: VMFA5
+subset: WEC
+synonym: "hemotrophic nutrition" RELATED [PMID:20672346]
+relationship: PSRO:has_integral_participant ROTO:0000020 ! visceral endodermal cell
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000014 ! bioquality entity
+relationship: PSRO:quality_of ROTO:0000017 ! visceral endoderm
+created_by: Birger Scholz
+creation_date: 2012-10-23T17:53:28Z
+
+[Term]
+id: ROTO:0000024
+name: cell viability
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000014 ! bioquality entity
+created_by: Birger Scholz
+creation_date: 2012-11-12T14:02:06Z
+
+[Term]
+id: ROTO:0000025
+name: ectoplacental cone
+namespace: phenotypic_entity
+def: "Thickened trophoblast in rodent embryos that becomes the fetal portion of the placenta." [ROTOC:BSCH]
+subset: WEC
+xref: UBERON:0004364 "ectoplacental cone"
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000020 ! partial biosystemic entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+relationship: PSRO:part_of ROTO:0000006 ! trophectoderm
+created_by: Birger Scholz
+creation_date: 2012-11-12T17:47:25Z
+
+[Term]
+id: ROTO:0000026
+name: allantois
+namespace: phenotypic_entity
+def: "The embryonic membranous sac that is the precursor of the umbilical cord in mammals. It derives from extraembryonic mesoderm and develops from the posterior part of the alimentary canal in the embryos of mammals, birds, and reptiles." [ROTOC:BSCH]
+comment: The allantois of the mouse emerges from the posterior end of the embryo at the neural plate stage of development as a bud of mesoderm derived from the primitive streak. As development proceeds, the \nallantois grows towards the chorion through the exocoelomic cavity.  Its distal end undergoes a process of cavitation whereby the extracellular spaces increase in volume and accumulate hyaluronic acid (HA).\nContact and fusion between the allantois and the chorion occurs at the 4-6 somite pair (s) stage, followed by spreading of the allantois on the surface of the chorion to form the chorio-allantoic plate.  The chorion \nforms the placental villi and the vasculature of the allantois grows into these villi to form the labyrinthine layer of the placenta.
+subset: VMFB0
+subset: WEC
+xref: UBERON:0004340 "allantois"
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: Birger Scholz
+creation_date: 2012-11-12T18:11:44Z
+
+[Term]
+id: ROTO:0000027
+name: chorioallantois
+def: "Resulting structure after the fusion of the allantois with the chorionic membrane." [ROTOC:BSCH]
+subset: VMFB1
+subset: WEC
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: Birger Scholz
+creation_date: 2012-11-12T18:15:40Z
+
+[Term]
+id: ROTO:0000028
+name: yolk sac vessel system
+namespace: phenotypic_entity
+subset: MF1
+subset: VMFA2
+subset: VMFA3
+subset: VMFA4
+subset: VMFA5
+subset: WEC
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: Birger Scholz
+creation_date: 2012-11-12T18:24:21Z
+
+[Term]
+id: ROTO:0000029
+name: embryo
+namespace: phenotypic_entity
+def: "The whole embryonic body, including both the embryo proper and the extraembryonic component." [ROTOC:BSCH]
+comment: Both the embryo and the embryo proper may have the quality of "body viability". In WEC, one keeps a embryo alive without the parietal yolk sac for 48h. In later stages, one can keep embryos viable without intact extraembryonic membranes for several hours [ROTOC:BSCH].
+xref: UBERON:0000922 "embryo"
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000003 ! body level entity
+relationship: PSRO:is_type_of PSO:0000019 ! phenotypic boundary entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: Birger Scholz
+creation_date: 2012-11-13T12:29:46Z
+
+[Term]
+id: ROTO:0000030
+name: embryo proper
+namespace: phenotypic_entity
+def: "Part of the embryo that derives from the inner cell mass in the blastocyst stage and also constitutes the basis for the future mature individual. Does not incorporate extra embryonic membranes such as the amnion, chorion and parts of the placenta." [PSOC:BSCH]
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000003 ! body level entity
+relationship: PSRO:is_type_of PSO:0000020 ! partial biosystemic entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+relationship: PSRO:part_of ROTO:0000029 ! embryo
+created_by: Birger Scholz
+creation_date: 2012-11-13T12:29:58Z
+
+[Term]
+id: ROTO:0000031
+name: vitelline circulation
+namespace: phenotypic_entity
+def: "Directional blood movement within the vascular system of the visceral yolk sac. Requires a minimum of a functional vitelline artery and vein." [ROTOC:BSCH]
+subset: VMFA2
+subset: VMFA3
+subset: VMFA4
+subset: VMFA5
+subset: WEC
+relationship: PSRO:has_integral_participant ROTO:0000013 ! blood
+relationship: PSRO:has_integral_participant ROTO:0000069 ! vitelline artery endothelium
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000014 ! bioquality entity
+relationship: PSRO:quality_of ROTO:0000028 ! yolk sac vessel system
+created_by: Birger Scholz
+creation_date: 2012-11-23T16:20:41Z
+
+[Term]
+id: ROTO:0000032
+name: arterial vitelline yolk sac origin
+namespace: phenotypic_entity
+def: "Part of vitelline artery present at the intersection of its entrance into the yolk sac vessel system within the visceral yolk sac." [PSOC:BSCH]
+subset: WEC
+relationship: PSRO:integral_part_of ROTO:0000011 ! vitelline artery
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: Birger Scholz
+creation_date: 2012-11-23T18:12:12Z
+
+[Term]
+id: ROTO:0000033
+name: venous vitelline yolk sac outlet
+namespace: phenotypic_entity
+def: "Part of vitelline vein present at the intersection of its exit from the yolk sac vessel system within the visceral yolk sac." [PSOC:BSCH]
+relationship: PSRO:integral_part_of ROTO:0000012 ! paired vitelline vein
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: Birger Scholz
+creation_date: 2012-11-23T18:29:09Z
+
+[Term]
+id: ROTO:0000034
+name: left vitelline vein
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+created_by: Birger Scholz
+creation_date: 2012-11-23T18:39:15Z
+
+[Term]
+id: ROTO:0000035
+name: right vitelline vein
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+created_by: Birger Scholz
+creation_date: 2012-11-23T18:39:28Z
+
+[Term]
+id: ROTO:0000036
+name: umbilical artery
+namespace: phenotypic_entity
+def: "Connects the chorioallantoic and future umbilical blood circulation to the dorsal aorta in the embryo proper. Present  at least from the five somite pair stage and becomes fused to the dorsal aorta during the six to seven somite pair stage. It remains as a extraembryonic vessel throughout organogenesis. Is a site of  where some of first hematopoietic stem cells (HSCs) emerge within the embryo proper." [PMID:10835345, PMID:18682734, ROTOC:BSCH]
+comment: The UA is not fused with the dorsal aorta at the five somite pair stage (PMID:18682734).
+subset: VMFB3
+subset: WEC
+synonym: "UA" RELATED [ROTOC:BSCH]
+relationship: PSRO:has_integral_component ROTO:0000070 ! umbilical artery endothelium
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: Birger Scholz
+creation_date: 2012-11-23T19:33:02Z
+
+[Term]
+id: ROTO:0000037
+name: bilateral umbilical vein system
+namespace: phenotypic_entity
+def: "Blood vessels connecting the chorioallantoic circulation to the sinus venosus. Are fully formed as intraembryonic bilateral axial vessels at the 14 to 15 somite pair stage." [PMID:18682734, ROTOC:BSCH]
+synonym: "UV" RELATED [ROTOC:BSCH]
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: Birger Scholz
+creation_date: 2012-11-23T19:33:23Z
+
+[Term]
+id: ROTO:0000038
+name: paired dorsal aorta
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+created_by: Birger Scholz
+creation_date: 2013-02-27T15:55:08Z
+
+[Term]
+id: ROTO:0000039
+name: extraembryonic component
+namespace: phenotypic_entity
+def: "Transitional part of the embryo that incorporates the extra-embryonic membranes such as the amnion, chorion and parts of the placenta." [PSOC:BSCH]
+relationship: PSRO:has_component ROTO:0000000 ! chorion
+relationship: PSRO:has_component ROTO:0000001 ! yolk sac
+relationship: PSRO:has_component ROTO:0000040 ! exocoelom
+relationship: PSRO:has_component ROTO:0000083 ! amnion
+relationship: PSRO:has_component ROTO:0000084 ! amniotic cavity
+relationship: PSRO:has_component ROTO:0000086 ! coelomic fluid
+relationship: PSRO:has_component ROTO:0000087 ! amniotic fluid
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000003 ! body level entity
+relationship: PSRO:is_type_of PSO:0000020 ! partial biosystemic entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+relationship: PSRO:part_of ROTO:0000029 ! embryo
+created_by: Birger Scholz
+creation_date: 2012-11-24T12:40:43Z
+
+[Term]
+id: ROTO:0000040
+name: exocoelom
+namespace: phenotypic_entity
+subset: WEC
+synonym: "chorionic cavity" RELATED [ROTOC:BSCH]
+synonym: "ECC" RELATED [ROTOC:BSCH]
+synonym: "exocoelomic cavity" RELATED [ROTOC:BSCH]
+synonym: "extraembryonic coelom" RELATED [ROTOC:BSCH]
+xref: UBEROn:0003888
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000063 ! space entity
+created_by: Birger Scholz
+creation_date: 2012-11-24T13:08:46Z
+
+[Term]
+id: ROTO:0000041
+name: embryonic axial rotation
+namespace: phenotypic_entity
+comment: Usually between ed8-8.5 in mouse and 9-9.5 in rat. Normally finished at the 14-15 somite pair stage [ROTOC:BSCH].
+subset: WEC
+synonym: "body axis rotation" RELATED [PSOC:BSCH]
+synonym: "embryonic turning" EXACT [PSOC:BSCH]
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000014 ! bioquality entity
+relationship: PSRO:quality_of ROTO:0000030 ! embryo proper
+created_by: Birger Scholz
+creation_date: 2012-11-28T10:57:21Z
+
+[Term]
+id: ROTO:0000042
+name: cephalic embryo region
+namespace: phenotypic_entity
+subset: WEC
+synonym: "anterior body region" RELATED [PSOC:BSCH]
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000020 ! partial biosystemic entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+relationship: PSRO:part_of ROTO:0000030 ! embryo proper
+created_by: Birger Scholz
+creation_date: 2012-11-28T11:03:42Z
+
+[Term]
+id: ROTO:0000043
+name: trunkal embryo region
+namespace: phenotypic_entity
+subset: WEC
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000020 ! partial biosystemic entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+relationship: PSRO:part_of ROTO:0000030 ! embryo proper
+created_by: Birger Scholz
+creation_date: 2012-11-28T11:04:58Z
+
+[Term]
+id: ROTO:0000044
+name: posterior embryo region
+namespace: phenotypic_entity
+subset: WEC
+synonym: "tail region" RELATED [PSOC:BSCH]
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000020 ! partial biosystemic entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+relationship: PSRO:part_of ROTO:0000030 ! embryo proper
+created_by: Birger Scholz
+creation_date: 2012-11-28T11:06:12Z
+
+[Term]
+id: ROTO:0000045
+name: cephalic rotation
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000014 ! bioquality entity
+relationship: PSRO:part_of ROTO:0000041 ! embryonic axial rotation
+relationship: PSRO:quality_of ROTO:0000042 ! cephalic embryo region
+created_by: Birger Scholz
+creation_date: 2012-11-28T11:28:36Z
+
+[Term]
+id: ROTO:0000046
+name: trunkal rotation
+namespace: phenotypic_entity
+subset: WEC
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000014 ! bioquality entity
+relationship: PSRO:part_of ROTO:0000041 ! embryonic axial rotation
+relationship: PSRO:quality_of ROTO:0000043 ! trunkal embryo region
+created_by: Birger Scholz
+creation_date: 2012-11-28T11:29:40Z
+
+[Term]
+id: ROTO:0000047
+name: posterior rotation
+namespace: phenotypic_entity
+synonym: "tail region rotation" RELATED [PSOC:BSCH]
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000014 ! bioquality entity
+relationship: PSRO:part_of ROTO:0000041 ! embryonic axial rotation
+created_by: Birger Scholz
+creation_date: 2012-11-28T11:30:16Z
+
+[Term]
+id: ROTO:0000048
+name: torsional rotation
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:part_of ROTO:0000041 ! embryonic axial rotation
+created_by: Birger Scholz
+creation_date: 2012-11-28T11:49:40Z
+
+[Term]
+id: ROTO:0000049
+name: chorioallantoic circulation
+namespace: phenotypic_entity
+def: "State of blood transport through the umbilical vessels in the chorioallantois." [ROTOC:BSCH]
+subset: VMFB3
+subset: WEC
+synonym: "umbilical circulation" RELATED [PSOC:BSCH]
+relationship: PSRO:has_integral_participant ROTO:0000036 ! umbilical artery
+relationship: PSRO:has_integral_participant ROTO:0000072 ! paired extraembryonic umbilical vein
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000014 ! bioquality entity
+relationship: PSRO:quality_of ROTO:0000027 ! chorioallantois
+created_by: Birger Scholz
+creation_date: 2012-11-28T16:02:23Z
+
+[Term]
+id: ROTO:0000050
+name: cardiac anlage
+namespace: phenotypic_entity
+def: "Tissue region in the anterior part of the embryo proper which is formed by a collection of mesoderm cells. Undergoes positioning dorsally to the pericardial cavity during the cephalic/cranial flexion." [PSOC:BSCH]
+synonym: "cardiac primordium" RELATED [PSOC:BSCH]
+synonym: "cardiogenic plate" EXACT [PSOC:BSCH]
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+created_by: Birger Scholz
+creation_date: 2012-11-28T16:13:28Z
+
+[Term]
+id: ROTO:0000051
+name: pericardial cavity
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000063 ! space entity
+created_by: Birger Scholz
+creation_date: 2012-11-28T16:17:37Z
+
+[Term]
+id: ROTO:0000052
+name: cephalic flexion
+namespace: phenotypic_entity
+synonym: "embryonic cranial flexion" RELATED [PSOC:BSCH]
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+created_by: Birger Scholz
+creation_date: 2012-11-28T16:20:15Z
+
+[Term]
+id: ROTO:0000053
+name: primitive heart tube
+namespace: phenotypic_entity
+def: "Initial heart tube derived from the cardiac anlage." [PSOC:BSCH]
+synonym: "endocardial tube" RELATED [PSOC:BSCH]
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+created_by: Birger Scholz
+creation_date: 2012-11-28T16:32:39Z
+
+[Term]
+id: ROTO:0000054
+name: primitive heart cycle
+namespace: phenotypic_entity
+synonym: "cyclic heart contraction" RELATED [PSOC:BSCH]
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000014 ! bioquality entity
+created_by: Birger Scholz
+creation_date: 2012-11-28T16:36:19Z
+
+[Term]
+id: ROTO:0000055
+name: endocardium
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+created_by: Birger Scholz
+creation_date: 2012-11-28T17:30:09Z
+
+[Term]
+id: ROTO:0000056
+name: partioned heart
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+created_by: Birger Scholz
+creation_date: 2012-11-28T17:54:22Z
+
+[Term]
+id: ROTO:0000057
+name: bulbous cordis
+namespace: phenotypic_entity
+synonym: "conotruncus" EXACT [PSOC:BSCH]
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+created_by: Birger Scholz
+creation_date: 2012-11-28T18:00:58Z
+
+[Term]
+id: ROTO:0000058
+name: atrium commune
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+created_by: Birger Scholz
+creation_date: 2012-11-28T18:02:37Z
+
+[Term]
+id: ROTO:0000059
+name: ventriculus communis
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+created_by: Birger Scholz
+creation_date: 2012-11-28T18:05:31Z
+
+[Term]
+id: ROTO:0000060
+name: sinus venosus
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+created_by: Birger Scholz
+creation_date: 2012-11-28T18:09:23Z
+
+[Term]
+id: ROTO:0000061
+name: conus cordis
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:part_of ROTO:0000057 ! bulbous cordis
+created_by: Birger Scholz
+creation_date: 2012-11-28T18:13:58Z
+
+[Term]
+id: ROTO:0000062
+name: truncus arteriosus
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:part_of ROTO:0000057 ! bulbous cordis
+created_by: Birger Scholz
+creation_date: 2012-11-28T18:14:44Z
+
+[Term]
+id: ROTO:0000063
+name: left atrium
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+created_by: Birger Scholz
+creation_date: 2012-11-28T18:47:02Z
+
+[Term]
+id: ROTO:0000064
+name: right atrium
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+created_by: Birger Scholz
+creation_date: 2012-11-28T18:47:21Z
+
+[Term]
+id: ROTO:0000065
+name: atrioventricular canal
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+created_by: Birger Scholz
+creation_date: 2012-11-28T18:51:13Z
+
+[Term]
+id: ROTO:0000066
+name: left ventricle
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+created_by: Birger Scholz
+creation_date: 2012-11-28T18:52:41Z
+
+[Term]
+id: ROTO:0000067
+name: right ventricle
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+created_by: Birger Scholz
+creation_date: 2012-11-28T18:52:59Z
+
+[Term]
+id: ROTO:0000068
+name: single dorsal aorta
+namespace: phenotypic_entity
+def: "Structure formed through the fusion of the paired dorsal aorta." [ROTOC:BSCH]
+synonym: "single midline dorsal aorta" EXACT [ROTOC:BSCH]
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+created_by: Birger Scholz
+creation_date: 2013-02-27T15:56:07Z
+
+[Term]
+id: ROTO:0000069
+name: vitelline artery endothelium
+subset: VMFA2
+subset: VMFA3
+subset: VMFA4
+subset: VMFA5
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: Birger Scholz
+creation_date: 2013-02-27T16:02:12Z
+
+[Term]
+id: ROTO:0000070
+name: umbilical artery endothelium
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: Birger Scholz
+creation_date: 2013-02-27T16:14:07Z
+
+[Term]
+id: ROTO:0000071
+name: bilateral intraembryonic umbilical vein
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+relationship: PSRO:part_of ROTO:0000037 ! bilateral umbilical vein system
+created_by: Birger Scholz
+creation_date: 2013-02-27T16:24:32Z
+
+[Term]
+id: ROTO:0000072
+name: paired extraembryonic umbilical vein
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+relationship: PSRO:part_of ROTO:0000037 ! bilateral umbilical vein system
+created_by: Birger Scholz
+creation_date: 2013-02-27T16:27:29Z
+
+[Term]
+id: ROTO:0000073
+name: mus
+namespace: biocyclic_entity
+relationship: PSRO:is_type_of PSO:0000027 ! taxonomic genus
+created_by: Birger Scholz
+creation_date: 2013-02-27T20:24:24Z
+
+[Term]
+id: ROTO:0000074
+name: murinae
+namespace: biocyclic_entity
+relationship: PSRO:biocyclic_quality_of ROTO:0000029 ! embryo
+relationship: PSRO:is_type_of PSO:0000033 ! taxonomic subfamily
+created_by: Birger Scholz
+creation_date: 2013-02-27T20:25:25Z
+
+[Term]
+id: ROTO:0000075
+name: muridae
+namespace: biocyclic_entity
+relationship: PSRO:biocyclic_quality_of ROTO:0000029 ! embryo
+relationship: PSRO:is_type_of PSO:0000026 ! taxonomic family
+created_by: Birger Scholz
+creation_date: 2013-02-27T20:26:05Z
+
+[Term]
+id: ROTO:0000076
+name: animalia
+namespace: biocyclic_entity
+relationship: PSRO:biocyclic_quality_of ROTO:0000029 ! embryo
+relationship: PSRO:is_type_of PSO:0000028 ! taxonomic kingdom
+created_by: Birger Scholz
+creation_date: 2013-02-27T20:26:30Z
+
+[Term]
+id: ROTO:0000077
+name: rodentia
+namespace: biocyclic_entity
+relationship: PSRO:biocyclic_quality_of ROTO:0000029 ! embryo
+relationship: PSRO:is_type_of PSO:0000029 ! taxonomic order
+created_by: Birger Scholz
+creation_date: 2013-02-27T20:26:55Z
+
+[Term]
+id: ROTO:0000078
+name: chordata
+namespace: biocyclic_entity
+relationship: PSRO:biocyclic_quality_of ROTO:0000029 ! embryo
+relationship: PSRO:is_type_of PSO:0000030 ! taxonomic phylum
+created_by: Birger Scholz
+creation_date: 2013-02-27T20:27:18Z
+
+[Term]
+id: ROTO:0000079
+name: mammalia
+namespace: biocyclic_entity
+relationship: PSRO:biocyclic_quality_of ROTO:0000029 ! embryo
+relationship: PSRO:is_type_of PSO:0000025 ! taxonomic class
+created_by: Birger Scholz
+creation_date: 2013-02-27T20:27:45Z
+
+[Term]
+id: ROTO:0000080
+name: mus musculus
+relationship: PSRO:is_type_of PSO:0000023 ! taxonomic species
+created_by: Birger Scholz
+creation_date: 2013-02-27T20:28:47Z
+
+[Term]
+id: ROTO:0000081
+name: rattus norvegicus
+relationship: PSRO:biocyclic_quality_of ROTO:0000029 ! embryo
+relationship: PSRO:is_type_of PSO:0000023 ! taxonomic species
+created_by: Birger Scholz
+creation_date: 2013-02-27T20:29:09Z
+
+[Term]
+id: ROTO:0000082
+name: rattus
+namespace: biocyclic_entity
+relationship: PSRO:biocyclic_quality_of ROTO:0000029 ! embryo
+relationship: PSRO:is_type_of PSO:0000027 ! taxonomic genus
+created_by: Birger Scholz
+creation_date: 2013-02-27T20:33:11Z
+
+[Term]
+id: ROTO:0000083
+name: amnion
+namespace: phenotypic_entity
+relationship: PSRO:has_component ROTO:0000090 ! amniotic mesoderm
+relationship: PSRO:has_component ROTO:0000091 ! amniotic ectoderm
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: Birger Scholz
+creation_date: 2013-02-28T10:46:25Z
+
+[Term]
+id: ROTO:0000084
+name: amniotic cavity
+namespace: phenotypic_entity
+synonym: "AC" RELATED [ROTOC:BSCH]
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000063 ! space entity
+created_by: Birger Scholz
+creation_date: 2013-02-28T10:48:11Z
+
+[Term]
+id: ROTO:0000085
+name: blastoceol cavity
+namespace: phenotypic_entity
+synonym: "secondary yolk sac cavity" RELATED [ROTOC:BSCH]
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000063 ! space entity
+created_by: Birger Scholz
+creation_date: 2013-02-28T10:51:19Z
+
+[Term]
+id: ROTO:0000086
+name: coelomic fluid
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000070 ! liquid entity
+created_by: Birger Scholz
+creation_date: 2013-02-28T10:56:33Z
+
+[Term]
+id: ROTO:0000087
+name: amniotic fluid
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000070 ! liquid entity
+created_by: Birger Scholz
+creation_date: 2013-02-28T11:08:40Z
+
+[Term]
+id: ROTO:0000088
+name: yolk sac fluid
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000070 ! liquid entity
+created_by: Birger Scholz
+creation_date: 2013-02-28T11:10:03Z
+
+[Term]
+id: ROTO:0000089
+name: anastomosis
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000014 ! bioquality entity
+created_by: Birger Scholz
+creation_date: 2013-02-28T13:28:34Z
+
+[Term]
+id: ROTO:0000090
+name: amniotic mesoderm
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: Birger Scholz
+creation_date: 2013-02-28T14:20:12Z
+
+[Term]
+id: ROTO:0000091
+name: amniotic ectoderm
+namespace: phenotypic_entity
+relationship: PSRO:is_type_of PSO:0000001 ! phenotypic entity
+relationship: PSRO:is_type_of PSO:0000004 ! multi-cellular level entity
+relationship: PSRO:is_type_of PSO:0000069 ! solid entity
+created_by: Birger Scholz
+creation_date: 2013-02-28T14:20:48Z
+
+[Typedef]
+id: PSRO:attribute_of
+name: attribute of
+def: "Relation R signifying that the subject (biostructural entity S composed of components s) in a clause is related to its object (attribute entity A) in a manner that S entails A if and only if A is also entailed in any given component s. Converse relation: \"has_attribute\"." [PSOC:BSCH]
+created_by: Birger Scholz
+creation_date: 2013-02-27T12:00:37Z
+
+[Typedef]
+id: PSRO:biocyclic_quality_of
+name: evoquality of
+def: "Relation R signifying that the subject (a biostructural entity S composed of components s) in a clause is related to a biocyclic object (biocyclic entity B) in a manner that S entails B." [PSOC:BSCH]
+comment: For instance: taxonomic classifications are founded on a evolutionary contextual premise. An individual entity E has the evoquality of (being defined as) Rattus norvegicus. It derives its semantic meaning from individual entity E having a evolutionary lineage. "quality_of" derives its meaning instead from any or all biohierarchical differences between organizational levels that are entailed in individual entity E [PSOC:BSCH].
+created_by: Birger Scholz
+creation_date: 2013-02-27T20:34:58Z
+
+[Typedef]
+id: PSRO:blistered_attribute_of
+name: blistered for
+def: "Relation R signifying that the domain (the subject, a biostructural entity with a ectodermal lining) is related to its converse domain in a manner that signifies it to have a accumulation of fluid- filled thin walled structures. Converse relation: \"has_blistered_attribute\"." [PATO:0001928, PSOC:BSCH]
+xref: MP:0001208
+xref: PATO:0001928
+is_a: PSRO:irregular_attribute_of ! irregular for
+created_by: Birger Scholz
+creation_date: 2013-02-27T16:57:33Z
+
+[Typedef]
+id: PSRO:connected_yo
+name: connected_to
+is_a: PSRO:has_position_relative_to ! positioned to
+created_by: Birger Scholz
+creation_date: 2013-02-28T13:44:01Z
+
+[Typedef]
+id: PSRO:damaged_attribute_of
+name: damaged for
+def: "Relation R signifying that the domain (the subject, a biostructural entity) is related to its converse domain in a manner that signifies it to be harmed or injured or spoiled. Converse relation: \"has_damaged_attribute\"." [PATO:0001167, PSOC:BSCH]
+xref: PATO:0001167
+is_a: PSRO:irregular_attribute_of ! irregular for
+created_by: Birger Scholz
+creation_date: 2013-02-27T17:07:30Z
+
+[Typedef]
+id: PSRO:deformed_attribute_of
+name: deformed for
+def: "Relation R signifying that the domain (the subject, a solid biostructural entity) is related to its converse domain in a manner that signifies it to be distorted in form. Converse relation: \"has_deformed_attribute\"." [PATO:0001617, PSOC:BSCH]
+xref: PATO:0001617
+is_a: PSRO:irregular_attribute_of ! irregular for
+created_by: Birger Scholz
+creation_date: 2013-02-27T17:15:09Z
+
+[Typedef]
+id: PSRO:entails_integral_process
+name: entails integral process
+is_transitive: true
+is_a: PSRO:has_integral_element ! has integral element
+created_by: Birger Scholz
+creation_date: 2012-10-23T17:55:43Z
+
+[Typedef]
+id: PSRO:entails_process
+name: entails process
+is_a: PSRO:has_element ! has element
+created_by: BSch
+creation_date: 2012-08-12T10:21:01Z
+
+[Typedef]
+id: PSRO:enumeration_attribute_of
+name: enumeration for
+is_a: PSRO:attribute_of ! attribute of
+created_by: Birger Scholz
+creation_date: 2013-02-27T19:14:50Z
+
+[Typedef]
+id: PSRO:fused_to
+name: fused to
+is_a: PSRO:has_position_relative_to ! positioned to
+created_by: Birger Scholz
+creation_date: 2013-02-28T13:26:12Z
+
+[Typedef]
+id: PSRO:has_agenic_component
+name: has a agenic component
+def: "Relation R signifying that its domain (the subject, a biostructural or qualitative entity) relates to its converse domain (structure to structure and quality to quality) in a manner that signifies the domain be absent (as opposed to present) due to a failure of organogenesis and/or histogenesis within the greater context of the system of the domain." [PSOC:BSCH]
+is_a: PSRO:has_devoid_component ! has devoid component
+created_by: Birger Scholz
+creation_date: 2013-02-06T21:50:58Z
+
+[Typedef]
+id: PSRO:has_aplastic_component
+name: has aplastic component
+is_a: PSRO:has_devoid_component ! has devoid component
+created_by: Birger Scholz
+creation_date: 2013-02-06T21:47:54Z
+
+[Typedef]
+id: PSRO:has_component
+name: has component
+is_a: PSRO:has_element ! has element
+created_by: BSch
+creation_date: 2012-08-12T10:20:23Z
+
+[Typedef]
+id: PSRO:has_devoid_component
+name: has devoid component
+def: "Relation R signifying that its domain (the subject, a biostructural or qualitative entity) relates to its converse domain (Structure to structure and quality to quality) in a manner that signifies the domain be absent (as opposed to present) within the greater context of the system of the domain." [PSOC:BSCH]
+is_a: PSRO:has_component ! has component
+created_by: Birger Scholz
+creation_date: 2013-02-06T21:45:17Z
+
+[Typedef]
+id: PSRO:has_element
+name: has element
+created_by: BSch
+creation_date: 2012-08-12T10:19:24Z
+
+[Typedef]
+id: PSRO:has_integral_component
+name: has integral component
+is_transitive: true
+is_a: PSRO:has_integral_element ! has integral element
+created_by: Birger Scholz
+creation_date: 2012-10-23T17:56:19Z
+
+[Typedef]
+id: PSRO:has_integral_element
+name: has integral element
+is_transitive: true
+created_by: BSch
+creation_date: 2012-08-12T10:19:53Z
+
+[Typedef]
+id: PSRO:has_integral_part
+name: has integral part
+is_transitive: true
+created_by: Birger Scholz
+creation_date: 2013-02-09T13:35:21Z
+
+[Typedef]
+id: PSRO:has_integral_participant
+name: has integral participant
+synonym: "has i-participant" RELATED [PSOC:BSCH]
+is_transitive: true
+is_a: PSRO:has_integral_element ! has integral element
+created_by: Birger Scholz
+creation_date: 2012-10-23T17:56:37Z
+
+[Typedef]
+id: PSRO:has_location_distal_to
+name: distal to
+is_a: PSRO:has_position_relative_to ! positioned to
+created_by: Birger Scholz
+creation_date: 2012-11-23T19:07:10Z
+
+[Typedef]
+id: PSRO:has_location_proximal_to
+name: proximal to
+is_a: PSRO:has_position_relative_to ! positioned to
+created_by: Birger Scholz
+creation_date: 2012-11-23T19:06:32Z
+
+[Typedef]
+id: PSRO:has_location_separated_from
+name: separated from
+is_a: PSRO:has_position_relative_to ! positioned to
+created_by: Birger Scholz
+creation_date: 2012-11-23T19:09:38Z
+
+[Typedef]
+id: PSRO:has_obliterated_component
+name: has obliterated component
+def: "Relation R signifying that its domain (the subject, a biostructural or qualitative entity) relates to its converse domain (Structure to structure and quality to quality) in a manner that signifies the converse domain to be Relation R signifying that its domain (the subject, a biostructural or qualitative entity) relates to its converse domain to be completely removed (as opposed to present) within the greater context of the system of the domain." [PSOC:BSCH]
+is_a: PSRO:has_devoid_component ! has devoid component
+created_by: Birger Scholz
+creation_date: 2013-02-06T21:47:16Z
+
+[Typedef]
+id: PSRO:has_participant
+name: has participant
+is_a: PSRO:has_element ! has element
+created_by: BSch
+creation_date: 2012-08-12T10:21:29Z
+
+[Typedef]
+id: PSRO:has_position_relative_to
+name: positioned to
+created_by: Birger Scholz
+creation_date: 2013-02-28T13:24:30Z
+
+[Typedef]
+id: PSRO:has_quality
+name: has quality
+created_by: Birger Scholz
+creation_date: 2012-10-23T17:54:55Z
+
+[Typedef]
+id: PSRO:integral_part_of
+name: integral part of
+def: "Relation R signifying that the subject in a clause is related to its object in a manner that is implied by its lexical definition of the object. Converse relation: \"has_integral_part\"." [PSOC:BSCH]
+comment: For instance: a arterial blood vessel is by definition a tube with directional fluid movement whit a specific origin but with several possible forms of terminals. A venous vessel on the other hand a defined outlet rather than origin. This gives that "integral_part_of" (vessel A origin, vessel A) (PSOC:BSCH).
+synonym: "essential part of" RELATED [PSOC:BSCH]
+created_by: Birger Scholz
+creation_date: 2013-02-10T15:50:25Z
+
+[Typedef]
+id: PSRO:irregular_attribute_of
+name: irregular for
+def: "Relation R signifying that the domain (the subject, a biostructural entity) is related to its converse domain in a manner that signifies it to deviate in some attribute aspect in a categorical sense. Converse relation: \"has_irregular_attribute\"." [PATO:0000460, PSOC:BSCH]
+xref: PATO:0000460
+is_a: PSRO:attribute_of ! attribute of
+created_by: Birger Scholz
+creation_date: 2013-02-27T16:47:01Z
+
+[Typedef]
+id: PSRO:is_type_of
+name: is type of
+def: "Relation R connecting the subject to an object where the subject is a domain ontology class and a hyponym to a PSO class object." [PSOC:BSCH]
+comment: Does not exist in a OWL-version of a PSO-domain ontology [PSOC:BSCH].
+is_transitive: true
+created_by: BSCH
+creation_date: 2012-09-27T15:39:51Z
+
+[Typedef]
+id: PSRO:magnitude_attribute_of
+name: magnitude for
+is_a: PSRO:attribute_of ! attribute of
+created_by: Birger Scholz
+creation_date: 2013-02-28T15:01:19Z
+
+[Typedef]
+id: PSRO:malformed_attribute_of
+name: malformed for
+def: "Relation R signifying that the domain (the subject, a solid biostructural entity) is related to its converse domain in a manner that signifies it to be distorted in form as a consequence of irregular morphogenesis. Converse relation: \"has_malformed_attribute\"." [PATO:0000646, PSOC:BSCH]
+is_a: PSRO:deformed_attribute_of ! deformed for
+created_by: Birger Scholz
+creation_date: 2013-02-27T17:18:32Z
+
+[Typedef]
+id: PSRO:minor_magnitude_attribute_of
+name: minor for
+is_a: PSRO:magnitude_attribute_of ! magnitude for
+created_by: Birger Scholz
+creation_date: 2013-02-28T15:02:04Z
+
+[Typedef]
+id: PSRO:moderate_magnitude_attribute_of
+name: moderate for
+is_a: PSRO:magnitude_attribute_of ! magnitude for
+created_by: Birger Scholz
+creation_date: 2013-02-28T15:04:34Z
+
+[Typedef]
+id: PSRO:necrotic_attribute_of
+name: necrotic for
+def: "Relation R signifying that its domain (the subject, a biostructural entity on the multicellular or cellular level) related to the its converse domain (a bioattribute entity: composition) in a manner that signifies the domain to be completely or partially necrotic (i.e. encompassing a large set of cell that have undergone unprogrammed cell death).  Converse relation: \"has_necrotic_attribute\"." [PATO:0000647, PSOC:BSCH]
+xref: PATO:0000647
+is_a: PSRO:irregular_attribute_of ! irregular for
+created_by: Birger Scholz
+creation_date: 2013-02-27T17:23:56Z
+
+[Typedef]
+id: PSRO:part_of
+name: part of
+is_transitive: true
+created_by: BSch
+creation_date: 2012-08-12T10:18:48Z
+
+[Typedef]
+id: PSRO:quality_of
+name: quality of
+def: "Relation R signifying that the subject (a biostructural entity S composed of components s) in a clause is related to its object (a qualitative entity Q composed of participants s) in a manner that S entails Q if and only if Q is restricted to S and not entailed in any given component s. Converse relation: \"has_quality\"." [PSOC:BSCH]
+created_by: Birger Scholz
+creation_date: 2013-02-07T17:34:43Z
+
+[Typedef]
+id: PSRO:single_enumaration_attribute_of
+name: singular for
+is_a: PSRO:enumeration_attribute_of ! enumeration for
+created_by: Birger Scholz
+creation_date: 2013-02-27T19:15:38Z
+
+[Typedef]
+id: PSRO:specifies
+name: specifies
+def: "Relation R signifying that the subject in a clause is related to its object in a manner that both the subject and object have been empirically observed to exist when and only when the object is a attribute entity A and the subject is either a biostructural entity S or a bioquality entity Q. Converse relation: \"specified_by\"." [PSOC:BSCH]
+created_by: Birger Scholz
+creation_date: 2013-02-06T21:27:40Z

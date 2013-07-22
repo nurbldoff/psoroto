@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PSO-ROTO Spec Creator</title>
+  <link rel="stylesheet" href="static/css/main.css">
+</head>
+
+<div data-bind="foreach: rules">
+  <div class="rule">
+    <input data-bind="value: rule" placeholder="E.g. [A-G]"></input>
+    <button data-bind="click: add_value_rule">Add value rule</button>
+    <div data-bind="foreach: value_rules">
+      <div class="rule sub">
+        <input data-bind="value: rule" placeholder="E.g. int(value) == 3"></input>
+        <button data-bind="click: function () {add_fact($root.ontology())}">Add fact</button>
+        <div data-bind="foreach: facts">
+          <div class="rule sub">
+            <select data-bind="options: $root.get_names(ontology.domain),
+                               optionsText: function (name) {
+                                   var item = ontology.domain[name];
+                                   return '[' + name + '] ' + item.name;
+                               }, value: domain"></select>
+            <select data-bind="options: $root.get_names(ontology.relation),
+                               optionsText: function (name) {
+                                   var item = ontology.relation[name];
+                                   return '[' + name + '] ' + item.name;
+                               }, value: relation"></select>
+            <select data-bind="options: $root.get_names(ontology.converse_domain),
+                               optionsText: function (name) {
+                                   var item = ontology.converse_domain[name];
+                                   return '[' + name + '] ' + item.name;
+                               }, value: converse_domain"></select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button data-bind="click: add_rule">Add column rule</button>
+
+
+<div>
+  <pre class="spec" data-bind="text: spec"></pre>
+</div>
+
+
+<!-- Libs -->
+<script src="static/js/libs/knockout.js"></script>
+<script src="static/js/libs/jquery.js"></script>
+
+<!-- Code -->
+<script src="static/js/main.js"></script>

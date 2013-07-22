@@ -1,0 +1,14 @@
+.rule {
+    margin: 3px;
+    background-color: rgba(0,100,0,0.1);
+    padding: 3px;
+}
+
+.sub {
+    margin-left: 20px;
+}
+
+.spec {
+    background-color: #FFEECC;
+    padding: 5px;
+}
