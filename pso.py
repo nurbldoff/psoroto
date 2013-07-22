@@ -6,6 +6,7 @@ import sys
 import re
 from pprint import pprint
 from collections import defaultdict
+from itertools import chain
 import json
 import csv
 
@@ -32,17 +33,18 @@ def classify(spec, data):
                         continue
                     for cond, items in rule.items():
                         try:
+                            s = set(tuple(it) for it in items)
                             if cond == "null" or eval(cond, {"value": value,
                                                              "column": col}):
-                                positive[i] |= set(map(tuple, (map(str, i)
-                                                               for i in items)))
+                                positive[i] |= s
+                                negative[i] -= s
                             else:
-                                negative[i] |= set(map(tuple, (map(str, i)
-                                                               for i in items)))
-
+                                positive[i] -= s
+                                negative[i] |= s
                         except ValueError:
                             pass
-    return map(list, positive.values()), map(list, negative.values())
+    return dict((i, (list(positive[i]), list(negative[i])))
+                for i in set(positive.keys() + negative.keys()))
 
 
 # === Unit tests ===
@@ -50,19 +52,19 @@ def classify(spec, data):
 TEST_SPEC = {
     "A": {
         "value == 1": [
-            ("foo",)
+            ["foo"]
             ],
         "int(value) == 2": [
-            ("bar",)
+            ["bar"]
             ],
         "3 <= value < 4": [
-            ("baz",)
+            ["baz"]
             ]
         },
     "B": {
         "value == 5": [
-            ("foo",),
-            ("bar",)
+            ["foobar"],
+            ["barbaz"]
             ]
         }
     }
@@ -74,12 +76,26 @@ TEST_DATA = {
     }
 
 
+def _compare_results(res1, res2):
+    for a1, a2 in zip(res1, res2):
+        print "a1", a1, "a2", a2
+        for row1, row2 in zip(a1, a2):
+            print "row1", row1, "row2", row2
+            for pos1, pos2 in zip(sorted(row1), sorted(row2)):
+                print "pos1", pos1, "pos2", pos2
+                for el1, el2 in zip(sorted(pos1), sorted(pos2)):
+                    print "el1", el1, "el2", el2
+                    assert el1 == el2
+
+
 def test_classify():
-    """Verify that the classifyer works."""
+    """Verify that the classifier works."""
     test_result = classify(TEST_SPEC, TEST_DATA)
-    assert sorted(test_result[0]) == sorted([("foo",), ("bar",)])
-    assert sorted(test_result[1]) == sorted([("bar",)])
-    assert sorted(test_result[2]) == sorted([("baz",), ("foo",), ("bar",)])
+    print test_result[0]
+    _compare_results([test_result[0]], [([('foo',), ('foobar',), ('barbaz',)],
+                                         [('bar',), ('baz',)])])
+    # assert sorted(test_result[1]) == sorted([("bar",)])
+    # assert sorted(test_result[2]) == sorted([("baz",), ("foo",), ("bar",)])
 
 
 # Runs if the file is used as a script.
@@ -95,7 +111,7 @@ if __name__ == "__main__":
     try:
         spec_file, data_file, out_file = args
     except ValueError:
-        sys.exit("Usage:\n  %s spec.json data.csv output.csv" % sys.argv[0])
+        sys.exit("Usage:\n  %s spec.json data.csv [output.json]" % sys.argv[0])
 
     # Load specification
     spec = json.load(open(spec_file))
@@ -103,11 +119,13 @@ if __name__ == "__main__":
     # Load data
     with open(data_file, 'rb') as f:
         reader = csv.reader(f)
-        rowdata = [row for row in reader]
+        rowdata = [row for row in reader][:5]
     data = dict((name, [rowdata[j][i] for j in range(1, len(rowdata) - 2)])
                 for i, name in enumerate(rowdata[0]))
 
     result = classify(spec, data)
     with out_file if isinstance(out_file, file) else open(out_file, 'wb') as f:
-        writer = csv.writer(f)
-        writer.writerows(result)
+        f.write(json.dumps(result, indent=1,  # ensure_ascii=True,
+                           sort_keys=True))
+        # writer = csv.writer(f)
+        # writer.writerows(result)
